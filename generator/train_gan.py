@@ -15,18 +15,18 @@ torch.backends.cudnn.deterministic=True
 os.environ["CUBLAS_WORKSPACE_CONFIG"] = ":4096:2"
 
 dsample = 1
+dir_path = os.path.dirname(os.path.realpath(__file__))
 
 spis_dict_metrox2 = {
     "FS" : 256, 
     "my_channels" : [4,5,6,7], #[0,1,2,3,4] [0, 2, 3, 5, 7, 8, 10, 12, 13]
     "MAT_ARRAY" : ["02", "03", "04", "05", "06", "07", "08", "09", "10", "11"],
-    "true_loc": f"/home/ettore/BordeauxCode/METROX2/data/SPIS/",
+    "true_loc": dir_path + "/../data/wavelet_spis/",
     "fixed_len" : 600,
     "dataname" : "spis",
 }
 
 save_dir_name = "/../train_gan_results/"
-dir_path = os.path.dirname(os.path.realpath(__file__))
 save_dir_name = dir_path + save_dir_name
 if not os.path.exists(save_dir_name):
     os.mkdir(save_dir_name)
@@ -37,7 +37,7 @@ lrG = 1e-5*5
 batch_ = 32
 beta1 = 0.5
 
-num_epochs = 1
+num_epochs = 20
 d_step_timing = np.array([x for x in range(num_epochs)])
 
 device = torch.device("cuda:0" if (torch.cuda.is_available()) else "cpu")

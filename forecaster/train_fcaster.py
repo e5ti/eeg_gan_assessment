@@ -37,7 +37,7 @@ spis_dict_metrox2 = {
     "FS" : 256, 
     "my_channels" : [4,5,6,7], #[0,1,2,3,4] [0, 2, 3, 5, 7, 8, 10, 12, 13]
     "MAT_ARRAY" : ["02", "03", "04", "05", "06", "07", "08", "09", "10", "11"],
-    "true_loc": f"/home/ettore/BordeauxCode/METROX2/data/SPIS/",
+    "true_loc": dir_path + "/../data/wavelet_spis/",
     "fixed_len" : 600,
     "dataname" : "spis",
 }
@@ -50,7 +50,7 @@ criterion = nn.L1Loss().to(device)
 
 h_size = 64
 out_len = n_future
-num_epochs = 2
+num_epochs = 50
 
 for vidx in range(0, 10):
     for igd in is_gen_data:
