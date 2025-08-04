@@ -1,3 +1,5 @@
 /__pycache__
 /train_fcaster_results
 /train_gan_results
+*.npy
+*.pt

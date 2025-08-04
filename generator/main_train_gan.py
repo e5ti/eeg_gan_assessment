@@ -37,7 +37,7 @@ lrG = 1e-5*5
 batch_ = 32
 beta1 = 0.5
 
-num_epochs = 20
+num_epochs = 50
 d_step_timing = np.array([x for x in range(num_epochs)])
 
 device = torch.device("cuda:0" if (torch.cuda.is_available()) else "cpu")
